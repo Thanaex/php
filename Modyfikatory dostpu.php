@@ -1,8 +1,8 @@
 <?php
 class auto {
     public $moc;
-    private $marka;
-    private $model;
+    public $marka;
+    public $model;
 
     function __construct($moc) {
         $this->moc = $moc;

@@ -1,16 +1,14 @@
 <?php
-class Fruit {
-// Properties
-public $name;
-public $color;
-+ $name
-// Methods
-+ $color
-function set_name($name) {
-set_name($name)
-$this->name = $name;
-get_name($name)
+function divide ($dividend,$divisor) {
+    if($divisor == 0) {
+        throw new Exception ("division by zero");
+    } 
+    return $dividend / $divisor;
 }
-function get_name() {
-return $this->name;
+try {
+    echo divide (5,0);
+} catch (Exception $e) {
+    echo "unable to divide.";
 }
+
+?>
