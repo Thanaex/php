@@ -1,0 +1,77 @@
+body {
+    background-color: BlanchedAlmond;
+    font-family: "Century Gothic", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#naglowek, #stopka {
+    background-color: Sienna;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 130%;
+    clear: both;
+}
+
+#glowny {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#lewa {
+    background-color: NavajoWhite;
+    padding: 20px;
+    width: 35%;
+    height: 400px;
+    box-shadow: 5px 5px 10px DimGray;
+    box-sizing: border-box;
+}
+
+#nawigacja {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nawigacja ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#nawigacja li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#prawa {
+    background: transparent;
+    width: 50%;
+    height: 420px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+input, button {
+    margin-top: 20px;
+    display: block;
+}
+
+img {
+    width: 10%;
+    float: right;
+}
+
+a {
+    color: Sienna;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4C1900;
+}
