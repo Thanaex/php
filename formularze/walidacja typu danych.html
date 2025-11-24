@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamiczny Zmieniacz Kolorów</title>
+    <style>
+        #kolorowyDiv {
+            width: 200px;
+            height: 100px;
+            margin-top: 20px;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white; 
+            text-shadow: 1px 1px 2px black; 
+        }
+    </style>
+</head>
+<body>
+
+    <label for="barwa">Ustaw Barwę (0 - 360):</label>
+    <input type="range" id="barwa" min="0" max="360" value="0">
+    <input type="number" id="poleNumerowe" min="0" max="360" value="0">
+
+    <p>Aktualnie wybrana barwa: <span id="wartoscBarwy">0</span></p>
+    
+    <div id="kolorowyDiv">
+        Aktualny kolor
+    </div>
+
+    <script>
+        const suwakBarwy = document.getElementById('barwa');
+        const poleNumerowe = document.getElementById('poleNumerowe');
+        const poleWartosciBarwy = document.getElementById('wartoscBarwy');
+        const kolorowyDiv = document.getElementById('kolorowyDiv'); 
+
+        function aktualizujKolor(nowaWartosc) {
+            let wartoscBarwy = parseInt(nowaWartosc);
+            
+            if (isNaN(wartoscBarwy) || wartoscBarwy < 0) {
+                wartoscBarwy = 0;
+            } else if (wartoscBarwy > 360) {
+                wartoscBarwy = 360;
+            }
+            
+            suwakBarwy.value = wartoscBarwy;
+            poleNumerowe.value = wartoscBarwy;
+            
+            poleWartosciBarwy.textContent = wartoscBarwy + '';
+            
+            kolorowyDiv.style.backgroundColor = `hsl(${wartoscBarwy}, 100%, 50%)`;
+        }
+
+        aktualizujKolor(suwakBarwy.value);
+
+        suwakBarwy.addEventListener('input', function() {
+            aktualizujKolor(suwakBarwy.value);
+        });
+        
+        poleNumerowe.addEventListener('input', function() {
+            aktualizujKolor(poleNumerowe.value);
+        });
+    </script>
+
+</body>
+</html>

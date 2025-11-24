@@ -1,0 +1,20 @@
+<h2>Sprawdzenie czy pole jest uzupełnione</h2>
+
+<form name="myForm" id="form1" action="/action.php"
+onsubmit="return validateForm()" method="post">
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname">
+<input type="submit" value="Wyślij">
+</form>
+
+<script>
+    function validateForm(){
+        let inputField=document.querySelector("#fname").value;
+        //inna postać odwołania się do pola formularza:
+        //let inputField=document.forms["myForm"]["fname"].value;
+        if (inputField==""){
+            alert("To pole nie może być puste");
+            return false
+        }
+    }
+</script>

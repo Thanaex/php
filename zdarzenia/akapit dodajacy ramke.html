@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie</title>
+    <style>
+        .ramka {
+            border: 1px solid black;
+            padding: 5px;
+            margin-top: 10px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn">Dodaj </button>
+
+    <div id="kontener">
+    </div>
+
+    <script>
+        const przycisk = document.getElementById('btn');
+        const kontener = document.getElementById('kontener');
+
+        function dodajAkapit() {
+            const nowyAkapit = document.createElement('p');
+            nowyAkapit.textContent = "Imię: Michał";
+            nowyAkapit.classList.add('ramka');
+            kontener.appendChild(nowyAkapit);
+        }
+
+        przycisk.addEventListener('click', dodajAkapit);
+    </script>
+
+</body>
+</html>
